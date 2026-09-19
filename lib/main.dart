@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BooklyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BooklyApp extends StatelessWidget {
+  const BooklyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // change color while the other colors stay the same.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+        // the App.build method, and use it to set our app bar title.
         title: Text(widget.title),
       ),
       body: Center(
