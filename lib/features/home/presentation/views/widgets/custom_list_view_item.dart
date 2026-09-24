@@ -11,6 +11,7 @@ class CustomListViewItem extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 150 / 224,
         child: Container(
+          margin: EdgeInsets.only(right: 8),
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.fill,
