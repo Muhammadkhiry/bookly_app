@@ -1,15 +1,15 @@
-import 'package:bookly_app/core/utils/app_colors.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const new({super.key}); // تصحيح اسم الـ Constructor
+  const new({super.key}); 
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: const EdgeInsets.only(bottom: 20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -32,13 +32,16 @@ class BestSellerItem extends StatelessWidget {
 
           Expanded(
             child: Column(
+              spacing: 2,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
-                  child: const Text(
+                  child: Text(
                     "The Jungle Book",
-                    style: Styles.textStyle20,
+                    style: Styles.textStyle20.copyWith(
+                      fontFamily: AssetsData.kGTSectraFine,
+                    ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -48,7 +51,12 @@ class BestSellerItem extends StatelessWidget {
                 const SizedBox(height: 12),
                 Row(
                   children: [
-                    const Text("19.99 €", style: Styles.textStyle20),
+                    Text(
+                      "19.99 €",
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     const Spacer(),
                     const BookRating(),
                   ],
@@ -62,19 +70,3 @@ class BestSellerItem extends StatelessWidget {
   }
 }
 
-class BookRating extends StatelessWidget {
-  const BookRating({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: const [
-        Icon(Icons.star, size: 16, color: AppColors.kStarColor),
-        SizedBox(width: 6.3),
-        Text("4.8", style: Styles.textStyle16),
-        SizedBox(width: 5),
-        Opacity(opacity: 0.5, child: Text("(2390)", style: Styles.textStyle14)),
-      ],
-    );
-  }
-}
