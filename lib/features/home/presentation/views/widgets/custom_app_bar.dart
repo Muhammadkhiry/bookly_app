@@ -10,10 +10,14 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Image.asset(AssetsData.logo, height: 18),
+        Image.asset(AssetsData.logo, width: 75, height: 16),
         IconButton(
           onPressed: () {},
-          icon: FaIcon(FontAwesomeIcons.magnifyingGlass, size: 28),
+          icon: FaIcon(
+            FontAwesomeIcons.magnifyingGlass,
+            size: 25,
+            color: Colors.white,
+          ),
         ),
       ],
     );
