@@ -8,7 +8,7 @@ abstract class Styles {
     fontSize: 30,
     fontWeight: FontWeight.normal,
     color: AppColors.kWhiteColor,
-    // fontFamily: 'GT Sectra Fine', // لو ضايف خط مخصص
+    // fontFamily: 'GT Sectra Fine',
   );
 
   // Section titles (e.g. "Best Seller")

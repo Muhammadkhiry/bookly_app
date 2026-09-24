@@ -5,8 +5,8 @@ abstract class AppColors {
   static const kPrimaryColor = Color(0xFF100B20);
   
   // Secondary / Accent Colors
-  static const kButtonColor = Color(0xFFEF8262); // اللون البرتقالي/الوردي للزر
-  static const kStarColor = Color(0xFFFFDD4F);   // لون نجمة التقييم
+  static const kButtonColor = Color(0xFFEF8262); 
+  static const kStarColor = Color(0xFFFFDD4F); 
   
   // Neutral Colors
   static const kWhiteColor = Colors.white;
