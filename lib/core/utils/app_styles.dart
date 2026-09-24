@@ -11,6 +11,13 @@ abstract class Styles {
     // fontFamily: 'GT Sectra Fine',
   );
 
+  // Book title in list item
+  static const textStyle20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.normal,
+    color: AppColors.kWhiteColor,
+  );
+
   // Section titles (e.g. "Best Seller")
   static const textStyle18 = TextStyle(
     fontSize: 18,
@@ -18,10 +25,10 @@ abstract class Styles {
     color: AppColors.kWhiteColor,
   );
 
-  // Book title in list item
-  static const textStyle20 = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.normal,
+  // Price or Bold info
+  static const textStyle16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
     color: AppColors.kWhiteColor,
   );
 
@@ -30,12 +37,5 @@ abstract class Styles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: Colors.white70,
-  );
-
-  // Price or Bold info
-  static const textStyle16 = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-    color: AppColors.kWhiteColor,
   );
 }
