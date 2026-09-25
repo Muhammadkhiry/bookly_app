@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/books_list_view.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/home_custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 35),
-                CustomAppBar(),
+                HomeCustomAppBar(),
                 SizedBox(height: 47),
                 BooksListView(),
                 SizedBox(height: 52),
