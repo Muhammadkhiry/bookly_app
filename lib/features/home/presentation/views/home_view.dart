@@ -54,10 +54,10 @@ class _HomeViewState extends State<HomeView> {
           ),
 
           /// user avatar
-          CrystalNavigationBarItem.svg(
-            iconPath: "assets/images/user_avatar.svg",
-            unselectedIconPath: "assets/images/user_avatar.svg",
-            selectedColor: Colors.black,
+          CrystalNavigationBarItem(
+            icon: Icons.person_outline,
+            unselectedIcon: Icons.person_outline,
+            selectedColor: Colors.white,
           ),
         ],
       ),

@@ -13,6 +13,7 @@ class CustomListViewItem extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
+            color: Color(0xff1D182E),
             image: DecorationImage(
               fit: BoxFit.fill,
               image: AssetImage(AssetsData.testImage),
