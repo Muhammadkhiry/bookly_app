@@ -1,5 +1,6 @@
 import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:bookly_app/features/search/presentation/views/search_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,8 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kBookDetails,
-        builder: (context, state) => BookDetailsView(),
+        builder: (context, state) =>
+            BookDetailsView(bookModel: BestSellerItem.detailsModel),
       ),
       GoRoute(path: kSearchView, builder: (context, state) => SearchView()),
     ],

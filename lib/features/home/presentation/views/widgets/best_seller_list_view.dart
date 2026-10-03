@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BestSellerListView extends StatelessWidget {
   const new({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BestBooksCubit, BestBooksState>(
@@ -16,9 +15,9 @@ class BestSellerListView extends StatelessWidget {
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
-            itemCount: 21,
+            itemCount: state.books.length,
             itemBuilder: (BuildContext context, int index) {
-              return BestSellerItem();
+              return BestSellerItem(bookModel: state.books[index]);
             },
           );
         } else if (state is BestBooksFailure) {

@@ -1,12 +1,16 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/features/home/data/models/book_details_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const new({super.key});
+  const new({super.key, required this._bookModel});
+  final BookModel _bookModel;
+  static late BookModel detailsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +26,7 @@ class BestSellerItem extends StatelessWidget {
           // ignore: deprecated_member_use
           highlightColor: Colors.white.withOpacity(0.04),
           onTap: () {
+            detailsModel = _bookModel;
             FocusManager.instance.primaryFocus?.unfocus();
             GoRouter.of(context).push(AppRouter.kBookDetails);
           },
@@ -34,13 +39,12 @@ class BestSellerItem extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.15,
                   child: AspectRatio(
                     aspectRatio: 2.5 / 4,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        image: const DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage(AssetsData.testImage),
-                        ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadiusGeometry.circular(15),
+                      child: CachedNetworkImage(
+                        fit: BoxFit.fill,
+                        errorWidget: (context, url, error) => Icon(Icons.error),
+                        imageUrl: _bookModel.image ?? "",
                       ),
                     ),
                   ),
@@ -55,7 +59,7 @@ class BestSellerItem extends StatelessWidget {
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: Text(
-                          "The Jungle Book",
+                          _bookModel.title!,
                           style: Styles.textStyle20.copyWith(
                             fontFamily: AssetsData.kGTSectraFine,
                           ),
@@ -64,7 +68,10 @@ class BestSellerItem extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 3),
-                      const Text("Rudyard Kipling", style: Styles.textStyle14),
+                      Text(
+                        _bookModel.authors![0].name!,
+                        style: Styles.textStyle14,
+                      ),
                       const SizedBox(height: 12),
                       Row(
                         children: [
@@ -75,7 +82,7 @@ class BestSellerItem extends StatelessWidget {
                             ),
                           ),
                           const Spacer(),
-                          const BookRating(),
+                          Expanded(child: BookRating(bookModel: _bookModel)),
                         ],
                       ),
                     ],

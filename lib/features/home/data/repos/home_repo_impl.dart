@@ -16,17 +16,16 @@ class HomeRepoImpl implements HomeRepo {
       var data = await apiService.get(
         endPoint: "search-books",
         queryParameters: {
-          'query': 'books',
+          'query': 'programming',
           'sort': 'rating',
           'sort-direction': 'DESC',
           'group-results': 'true',
+          'number': 50,
         },
       );
 
       List<BookModel> books = [];
-      // Big Book API بترجع المادة جوه قائمة باسم "books"
       for (var bookMap in data["books"]) {
-        // لو الـ API بيرجع الـ book جواه Array غلفه بالطريقة دي:
         if (bookMap is List && bookMap.isNotEmpty) {
           books.add(BookModel.fromJson(bookMap[0]));
         } else {
@@ -48,7 +47,7 @@ class HomeRepoImpl implements HomeRepo {
       var data = await apiService.get(
         endPoint: "search-books",
         queryParameters: {
-          'query': 'books',
+          'query': 'cooking',
           'sort': 'rating',
           'sort-direction': 'DESC',
           'number': 50,
