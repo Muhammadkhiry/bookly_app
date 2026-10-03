@@ -17,7 +17,9 @@ class BestSellerItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         child: InkWell(
           borderRadius: BorderRadius.circular(15),
+          // ignore: deprecated_member_use
           splashColor: Colors.white.withOpacity(0.08),
+          // ignore: deprecated_member_use
           highlightColor: Colors.white.withOpacity(0.04),
           onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();

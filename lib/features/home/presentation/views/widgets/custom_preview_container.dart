@@ -24,6 +24,7 @@ class CustomPreviewContainer extends StatelessWidget {
                 topLeft: Radius.circular(15),
                 bottomLeft: Radius.circular(15),
               ),
+              // ignore: deprecated_member_use
               splashColor: Colors.black.withOpacity(0.1),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * (300 / 375) / 2,
@@ -53,6 +54,7 @@ class CustomPreviewContainer extends StatelessWidget {
                 topRight: Radius.circular(15),
                 bottomRight: Radius.circular(15),
               ),
+              // ignore: deprecated_member_use
               splashColor: Colors.white.withOpacity(0.2),
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * (300 / 375) / 2,

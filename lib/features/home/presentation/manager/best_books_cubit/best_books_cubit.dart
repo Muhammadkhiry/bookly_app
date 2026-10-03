@@ -10,7 +10,7 @@ class BestBooksCubit extends Cubit<BestBooksState> {
 
   final HomeRepo homeRepo;
 
-  Future fetchFeaturedBooks() async {
+  Future fetchBestSellerBooks() async {
     emit(BestBooksInitial());
     var result = await homeRepo.fetchBestSellerBooks();
 

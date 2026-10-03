@@ -54,8 +54,7 @@ class ServiceFailure extends Failure {
         );
 
       case DioExceptionType.unknown:
-      default:
-        if (dioException.message?.contains('SocketException') ?? false) {
+      if (dioException.message?.contains('SocketException') ?? false) {
           return const ServiceFailure(errMessage: 'No Internet Connection');
         }
         return const ServiceFailure(
