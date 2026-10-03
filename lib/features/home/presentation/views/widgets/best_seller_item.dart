@@ -76,7 +76,7 @@ class BestSellerItem extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "19.99 €",
+                            "Free",
                             style: Styles.textStyle20.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
