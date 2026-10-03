@@ -47,9 +47,40 @@ class HomeRepoImpl implements HomeRepo {
       var data = await apiService.get(
         endPoint: "search-books",
         queryParameters: {
-          'query': 'cooking',
+          'query': 'computer science',
           'sort': 'rating',
           'sort-direction': 'DESC',
+          'number': 50,
+        },
+      );
+
+      List<BookModel> books = [];
+      for (var bookMap in data["books"]) {
+        if (bookMap is List && bookMap.isNotEmpty) {
+          books.add(BookModel.fromJson(bookMap[0]));
+        } else {
+          books.add(BookModel.fromJson(bookMap));
+        }
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServiceFailure.fromDioError(e));
+      }
+      return left(ServiceFailure(errMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks() async {
+    try {
+      var data = await apiService.get(
+        endPoint: "search-books",
+        queryParameters: {
+          'query': 'computer science',
+          'sort': 'rating',
+          'sort-direction': 'DESC',
+          'group_results': true,
           'number': 50,
         },
       );
