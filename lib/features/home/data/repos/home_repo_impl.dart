@@ -8,22 +8,34 @@ import 'package:dio/dio.dart';
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
 
-  new({required this.apiService});
+  HomeRepoImpl({required this.apiService});
+
   @override
   Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async {
     try {
       var data = await apiService.get(
-        endPoint:
-            "&query=books&sort=rating&sort-direction=DESC&group-results=true",
+        endPoint: "search-books",
+        queryParameters: {
+          'query': 'books',
+          'sort': 'rating',
+          'sort-direction': 'DESC',
+          'group-results': 'true',
+        },
       );
+
       List<BookModel> books = [];
-      for (var book in data["books"]) {
-        books.add(book);
+      // Big Book API بترجع المادة جوه قائمة باسم "books"
+      for (var bookMap in data["books"]) {
+        // لو الـ API بيرجع الـ book جواه Array غلفه بالطريقة دي:
+        if (bookMap is List && bookMap.isNotEmpty) {
+          books.add(BookModel.fromJson(bookMap[0]));
+        } else {
+          books.add(BookModel.fromJson(bookMap));
+        }
       }
       return right(books);
     } catch (e) {
-      // ignore: deprecated_member_use
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServiceFailure.fromDioError(e));
       }
       return left(ServiceFailure(errMessage: e.toString()));
@@ -34,16 +46,26 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-        endPoint: "&query=books&sort=rating&sort-direction=DESC",
+        endPoint: "search-books",
+        queryParameters: {
+          'query': 'books',
+          'sort': 'rating',
+          'sort-direction': 'DESC',
+          'number': 50,
+        },
       );
+
       List<BookModel> books = [];
-      for (var book in data["books"]) {
-        books.add(book);
+      for (var bookMap in data["books"]) {
+        if (bookMap is List && bookMap.isNotEmpty) {
+          books.add(BookModel.fromJson(bookMap[0]));
+        } else {
+          books.add(BookModel.fromJson(bookMap));
+        }
       }
       return right(books);
     } catch (e) {
-      // ignore: deprecated_member_use
-      if (e is DioError) {
+      if (e is DioException) {
         return left(ServiceFailure.fromDioError(e));
       }
       return left(ServiceFailure(errMessage: e.toString()));

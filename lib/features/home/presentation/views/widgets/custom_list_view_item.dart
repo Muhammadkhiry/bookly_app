@@ -1,9 +1,8 @@
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class CustomListViewItem extends StatelessWidget {
-  const new({super.key});
-
+  const new({super.key, required this.imageURL});
+  final String imageURL;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,7 +15,7 @@ class CustomListViewItem extends StatelessWidget {
             color: Color(0xff1D182E),
             image: DecorationImage(
               fit: BoxFit.fill,
-              image: AssetImage(AssetsData.testImage),
+              image: NetworkImage(imageURL),
             ),
             borderRadius: BorderRadius.circular(15),
           ),

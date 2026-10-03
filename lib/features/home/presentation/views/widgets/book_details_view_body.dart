@@ -22,7 +22,7 @@ class BookDetailsViewBody extends StatelessWidget {
             child: FittedBox(
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                child: CustomListViewItem(),
+                child: CustomListViewItem(imageURL: '',),
               ),
             ),
           ),
@@ -64,7 +64,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 padding: EdgeInsets.only(right: 10.0),
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
-                  child: CustomListViewItem(),
+                  child: CustomListViewItem(imageURL: '',),
                 ),
               ),
             ),
