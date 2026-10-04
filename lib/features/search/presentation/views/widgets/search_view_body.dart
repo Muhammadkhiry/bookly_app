@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/app_styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:bookly_app/features/search/presentation/views/widgets/search_results_list_view.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/search_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,7 @@ class SearchViewBody extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 16),
-                BestSellerListView(),
+                SearchResultsListView(),
               ],
             ),
           ),

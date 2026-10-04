@@ -1,8 +1,13 @@
+import 'package:bookly_app/features/home/data/models/book_details_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive_flutter/adapters.dart';
+
+var _box = Hive.box<BookModel>("favBox");
 
 class BookCustomAppBar extends StatelessWidget {
-  const new({super.key});
+  const new({super.key, required this._bookModel});
+  final BookModel _bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,9 @@ class BookCustomAppBar extends StatelessWidget {
         ),
         IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () {},
+          onPressed: () {
+            _box.add(_bookModel);
+          },
           icon: Icon(
             Icons.shopping_cart_outlined,
             size: 25,

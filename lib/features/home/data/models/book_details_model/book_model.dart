@@ -1,14 +1,24 @@
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
 
 import 'author.dart';
 import 'rating.dart';
 
+part 'book_model.g.dart';
+
+@HiveType(typeId: 0)
 class BookModel extends Equatable {
+  @HiveField(0)
   final int? id;
+  @HiveField(1)
   final String? title;
+  @HiveField(2)
   final String? subtitle;
+  @HiveField(3)
   final String? image;
+  @HiveField(4)
   final List<Author>? authors;
+  @HiveField(5)
   final Rating? rating;
 
   const BookModel({
