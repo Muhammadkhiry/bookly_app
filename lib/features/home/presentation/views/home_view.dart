@@ -56,6 +56,7 @@ class _HomeViewState extends State<HomeView> {
             height: 10,
             unselectedItemColor: Colors.white70,
             selectedItemColor: Colors.white,
+            // ignore: deprecated_member_use
             backgroundColor: Colors.white.withOpacity(0.2),
             onTap: _handleIndexChanged,
             items: [

@@ -4,6 +4,7 @@ import 'package:bookly_app/features/home/data/models/book_details_model/book_mod
 import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:hive/hive.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
@@ -99,6 +100,19 @@ class HomeRepoImpl implements HomeRepo {
         return left(ServiceFailure.fromDioError(e));
       }
       return left(ServiceFailure(errMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchFavBooks() async {
+    try {
+      var favBox = Hive.box<BookModel>('favBox');
+
+      List<BookModel> books = favBox.values.toList();
+
+      return right(books);
+    } catch (e) {
+      return left(ServiceFailure(errMessage: "Error has been occured"));
     }
   }
 }
