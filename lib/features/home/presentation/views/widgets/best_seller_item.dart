@@ -10,7 +10,6 @@ import 'package:go_router/go_router.dart';
 class BestSellerItem extends StatelessWidget {
   const new({super.key, required this._bookModel});
   final BookModel _bookModel;
-  static late BookModel detailsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +25,9 @@ class BestSellerItem extends StatelessWidget {
           // ignore: deprecated_member_use
           highlightColor: Colors.white.withOpacity(0.04),
           onTap: () {
-            detailsModel = _bookModel;
             FocusManager.instance.primaryFocus?.unfocus();
-            GoRouter.of(context).push(AppRouter.kBookDetails);
+            GoRouter.of(context)
+                .push(AppRouter.kBookDetails, extra: _bookModel);
           },
           child: Padding(
             padding: const EdgeInsets.all(8.0),

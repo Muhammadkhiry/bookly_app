@@ -31,7 +31,7 @@ class CustomPreviewContainer extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * (48 / 812),
                 child: Center(
                   child: Text(
-                    "19.99€",
+                    "Free",
                     style: GoogleFonts.inter(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,

@@ -23,10 +23,8 @@ class BookDetailsViewBody extends StatelessWidget {
           SizedBox(
             height: 243,
             child: FittedBox(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: CustomListViewItem(imageURL: _bookModel.image ?? " "),
-              ),
+              fit: BoxFit.scaleDown,
+              child: CustomListViewItem(imageURL: _bookModel.image ?? " "),
             ),
           ),
           const SizedBox(height: 46),
@@ -37,7 +35,9 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 5),
           Text(
-            _bookModel.authors![0].name ?? "",
+            (_bookModel.authors != null && _bookModel.authors!.isNotEmpty)
+                ? _bookModel.authors![0].name ?? ""
+                : "",
             style: GoogleFonts.inter(
               fontWeight: FontWeight.w400,
               fontSize: 18,
@@ -58,20 +58,8 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15),
-          SizedBox(
-            height: 175,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (context, index) => const Padding(
-                padding: EdgeInsets.only(right: 10.0),
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: SimilarListView(),
-                ),
-              ),
-            ),
-          ),
+          // Directly render SimilarListView without outer ListView or FittedBox
+          const SimilarListView(),
           const SizedBox(height: 20),
         ],
       ),
