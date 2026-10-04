@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FavView extends StatelessWidget {
-  const new({super.key});
+  const FavView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => FavCubit(getIt.get<HomeRepoImpl>()..fetchFavBooks()),
-      child: FavViewBody(),
+      create: (context) => FavCubit(getIt.get<HomeRepoImpl>())..getFavorites(),
+      child: const Scaffold(body: SafeArea(child: FavViewBody())),
     );
   }
 }
