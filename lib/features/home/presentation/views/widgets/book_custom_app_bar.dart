@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/adapters.dart';
 
-var _box = Hive.box<BookModel>("favBox");
-
 class BookCustomAppBar extends StatelessWidget {
   const new({super.key, required this._bookModel});
   final BookModel _bookModel;
@@ -22,7 +20,8 @@ class BookCustomAppBar extends StatelessWidget {
         IconButton(
           padding: EdgeInsets.zero,
           onPressed: () {
-            _box.add(_bookModel);
+            var box = Hive.box<BookModel>("favBox");
+            box.add(_bookModel);
           },
           icon: Icon(
             Icons.shopping_cart_outlined,

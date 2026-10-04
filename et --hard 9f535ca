@@ -1,0 +1,45 @@
+[33md43f8ef[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m9f535ca[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{1}: commit: create the fav cubit
+[33md43f8ef[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{2}: commit: done research for books, adding hive package to deal with adding fav books in a local storage
+[33m47c1774[m HEAD@{3}: commit: refactor the similar books view
+[33m53a3a4f[m HEAD@{4}: commit: fetch a similar books in books details
+[33mefe2d7c[m HEAD@{5}: commit: refactor
+[33m1d2efdf[m HEAD@{6}: commit: create the may also like repo and cubit
+[33m8ff648b[m HEAD@{7}: commit: cached network image
+[33mfb397ce[m HEAD@{8}: commit: display the feature books list view
+[33mad2bcb1[m HEAD@{9}: commit: add get it to setup
+[33mf9c67d0[m HEAD@{10}: commit: edit the fetch method in best books cubit
+[33m1a91360[m HEAD@{11}: commit: create best books cubit
+[33mcea7b67[m HEAD@{12}: commit: create featured books cubit
+[33m38d9745[m HEAD@{13}: commit: implement fetchFeaturedBooks method
+[33mc00de0f[m HEAD@{14}: commit: dealling with the expected exceptions
+[33m4c92884[m HEAD@{15}: commit: fetch the books method
+[33mc52aaf5[m HEAD@{16}: commit: create api service
+[33mc90f333[m HEAD@{17}: commit: create home repo
+[33mdf3c041[m HEAD@{18}: commit: create the book details model
+[33m881cb06[m HEAD@{19}: commit: create the book details model
+[33m2cbd95e[m HEAD@{20}: commit: search view done
+[33me925a41[m HEAD@{21}: commit: change the app icon
+[33mbad97d2[m HEAD@{22}: commit: create the search view app bar
+[33m174acda[m HEAD@{23}: commit: replace the gesture dedetor by Inkwell and material, create the search and search body fills
+[33m799e444[m HEAD@{24}: commit: create the crystale bottom navigation bar
+[33m3edb977[m HEAD@{25}: commit: create the book details view, body, and the book view navigation
+[33m9d0847d[m HEAD@{26}: commit: install go router package, create the go router, and refactoring the navigation way
+[33m88f998d[m HEAD@{27}: commit: refactor the native splash screen
+[33mb8ccc8e[m HEAD@{28}: commit: create the book details view, book details view body , add go router package
+[33mdf9d228[m HEAD@{29}: commit: dealing with how to make the home screen scroll
+[33mb37f151[m HEAD@{30}: commit: best seller item, best seller list view, change the native splash screen
+[33m3d99611[m HEAD@{31}: commit: add font family
+[33m47b7fb3[m HEAD@{32}: commit: create the books list view
+[33m92545db[m HEAD@{33}: commit: add custom list view item to the home view
+[33m12bb0d6[m HEAD@{34}: commit: create the custom app bar
+[33m48ca2cd[m HEAD@{35}: commit: refactor init state, navigation to home view
+[33m1dc2551[m HEAD@{36}: commit: adding sliding animation to the splash text
+[33md728984[m HEAD@{37}: commit: add text to the splash view
+[33mfd3e2ec[m HEAD@{38}: commit: create the splash and splash body views
+[33m004ec94[m HEAD@{39}: commit: adding get package, create the utiles folder with the colors, styles, assets, files
+[33mcd7f329[m HEAD@{40}: commit: adding the font and assets to the pubspec.yaml
+[33m355055a[m HEAD@{41}: commit: renaming the app
+[33ma105858[m HEAD@{42}: commit: initial files&folders
+[33mcfa5b91[m HEAD@{43}: Branch: renamed refs/heads/master to refs/heads/main
+[33mcfa5b91[m HEAD@{45}: commit (initial): first commit
