@@ -4,6 +4,7 @@ import 'package:bookly_app/features/home/presentation/views/widgets/book_custom_
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_preview_container.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/similar_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -57,7 +58,7 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15),
-          // const SimilarListView(),
+          const SimilarListView(),
           const SizedBox(height: 20),
         ],
       ),

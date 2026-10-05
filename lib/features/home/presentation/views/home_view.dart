@@ -39,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
       providers: [
         BlocProvider(
           create: (context) =>
-              FeaturedBooksCubit(homeRepo: getIt.get<HomeRepoImpl>())
+              FeaturedBooksCubit(getIt.get<HomeRepoImpl>())
                 ..fetchFeaturedBooks(),
         ),
         BlocProvider(

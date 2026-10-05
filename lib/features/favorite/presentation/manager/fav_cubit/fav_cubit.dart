@@ -5,6 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class FavCubit extends Cubit<FavState> {
   FavCubit() : super(FavInitial()) {
+    fetchFavBooks();
     Hive.box<BookModel>('favBox').listenable().addListener(() {
       fetchFavBooks();
     });
@@ -13,8 +14,9 @@ class FavCubit extends Cubit<FavState> {
   void fetchFavBooks() {
     try {
       var box = Hive.box<BookModel>('favBox');
-      List<BookModel> books = List<BookModel>.from(box.values);
-      emit(FavSuccess(books));
+      List<BookModel> books = box.values.toList();
+      emit(FavLoading());
+      emit(FavSuccess(List.from(books)));
     } catch (e) {
       emit(FavFailure(e.toString()));
     }

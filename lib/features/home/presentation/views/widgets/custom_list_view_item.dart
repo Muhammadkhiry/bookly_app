@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_bookImage_loading_skeleton.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +15,15 @@ class CustomListViewItem extends StatelessWidget {
           padding: const EdgeInsets.only(right: 9.0),
           child: ClipRRect(
             borderRadius: BorderRadiusGeometry.circular(15),
-            child: CachedNetworkImage(
-              fit: BoxFit.fill,
-              imageUrl: imageURL,
-              errorWidget: (context, url, error) => Icon(Icons.error),
+            child: AspectRatio(
+              aspectRatio: 2.6 / 4,
+              child: CachedNetworkImage(
+                imageUrl: imageURL,
+                fit: BoxFit.fill,
+                placeholder: (context, url) =>
+                    const CustomBookImageLoadingSkeleton(),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
             ),
           ),
         ),
