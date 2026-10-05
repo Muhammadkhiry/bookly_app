@@ -1,7 +1,12 @@
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+part 'author.g.dart';
 
+@HiveType(typeId: 1)
 class Author extends Equatable {
+  @HiveField(0)
   final int? id;
+  @HiveField(1)
   final String? name;
 
   const Author({this.id, this.name});
