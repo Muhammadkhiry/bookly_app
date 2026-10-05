@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/service_locator.dart';
+import 'package:bookly_app/features/favorite/presentation/manager/fav_cubit/fav_cubit.dart';
 import 'package:bookly_app/features/favorite/presentation/views/fav_view.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presentation/manager/best_books_cubit/best_books_cubit.dart';
@@ -26,6 +27,10 @@ class _HomeViewState extends State<HomeView> {
     setState(() {
       _selectedTab = SelectedTab.values[i];
     });
+
+    if (_selectedTab == SelectedTab.favorites) {
+      context.read<FavCubit>().getFavorites();
+    }
   }
 
   @override
@@ -41,6 +46,10 @@ class _HomeViewState extends State<HomeView> {
           create: (context) =>
               BestBooksCubit(homeRepo: getIt.get<HomeRepoImpl>())
                 ..fetchBestSellerBooks(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              FavCubit(getIt.get<HomeRepoImpl>())..getFavorites(),
         ),
       ],
       child: Scaffold(
