@@ -1,21 +1,22 @@
-import 'package:bloc/bloc.dart';
 import 'package:bookly_app/features/favorite/presentation/manager/fav_cubit/fav_state.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo.dart';
-
+import 'package:bookly_app/features/home/data/models/book_details_model/book_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class FavCubit extends Cubit<FavState> {
-  final HomeRepo homeRepo;
-  FavCubit(this.homeRepo) : super(FavInitial());
+  FavCubit() : super(FavInitial()) {
+    Hive.box<BookModel>('favBox').listenable().addListener(() {
+      fetchFavBooks();
+    });
+  }
 
-  void getFavorites() async{
-    var books =await homeRepo.fetchFavBooks();
-    books.fold(
-      (failure) {
-        emit(FavFailure(failure.errMessage));
-      },
-      (books) {
-        emit(FavSuccess(books));
-      },
-    );
+  void fetchFavBooks() {
+    try {
+      var box = Hive.box<BookModel>('favBox');
+      List<BookModel> books = List<BookModel>.from(box.values);
+      emit(FavSuccess(books));
+    } catch (e) {
+      emit(FavFailure(e.toString()));
+    }
   }
 }

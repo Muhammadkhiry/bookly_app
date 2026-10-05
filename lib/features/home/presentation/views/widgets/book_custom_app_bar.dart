@@ -30,7 +30,7 @@ class BookCustomAppBar extends StatelessWidget {
             if (!isExist) {
               box.add(bookModel);
 
-              BlocProvider.of<FavCubit>(context).getFavorites();
+              BlocProvider.of<FavCubit>(context).fetchFavBooks();
 
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Added to Favorites!')),

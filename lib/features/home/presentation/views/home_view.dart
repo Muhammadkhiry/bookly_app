@@ -29,7 +29,7 @@ class _HomeViewState extends State<HomeView> {
     });
 
     if (_selectedTab == SelectedTab.favorites) {
-      context.read<FavCubit>().getFavorites();
+      context.read<FavCubit>().fetchFavBooks();
     }
   }
 
@@ -49,7 +49,7 @@ class _HomeViewState extends State<HomeView> {
         ),
         BlocProvider(
           create: (context) =>
-              FavCubit(getIt.get<HomeRepoImpl>())..getFavorites(),
+              FavCubit()..fetchFavBooks(),
         ),
       ],
       child: Scaffold(
