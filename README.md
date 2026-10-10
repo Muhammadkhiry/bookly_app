@@ -52,7 +52,7 @@ lib/
     │   └── presentation/# Cubits, Views, and Feature Widgets
     ├── search/          # Book search feature & filters
     └── splash/          # Splash view with animated transitions
-
+```
 
 
 🛠️ Tech Stack & PackagesCategoryTechnology / PackagePurposeFrameworkFlutterCross-platform UI ToolkitLanguageDartPrimary Programming LanguageState Managementflutter_blocPredictable State & Business LogicDependency Injectionget_itService Locator for Decoupled ComponentsRoutinggo_routerDeclarative Routing & Argument PassingNetworkingdioHTTP Client with InterceptorsLocal Storagehive & hive_flutterFast, Lightweight Key-Value DBFunctional ProgrammingdartzEither<Failure, Success> Error HandlingUI Enhancementsshimmer, google_fontsSmooth Loading Skeletons & Typography🚀 Getting StartedPrerequisitesEnsure you have the following installed on your machine:Flutter SDK (>= 3.x)Dart SDK (>= 3.x)Android Studio / VS Code with Flutter extensionsInstallationClone the repository:Bashgit clone [https://github.com/Muhammadkhiry/bookly_app.git](https://github.com/Muhammadkhiry/bookly_app.git)
