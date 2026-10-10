@@ -52,35 +52,3 @@ lib/
     │   └── presentation/# Cubits, Views, and Feature Widgets
     ├── search/          # Book search feature & filters
     └── splash/          # Splash view with animated transitions
-
-## 🛠️ Tech Stack & Packages
-
-| Category | Technology / Package | Purpose |
-| :--- | :--- | :--- |
-| **Framework** | [Flutter](https://flutter.dev) | Cross-platform UI Toolkit |
-| **Language** | [Dart](https://dart.dev) | Primary Programming Language |
-| **State Management** | [`flutter_bloc`](https://pub.dev/packages/flutter_bloc) | Predictable State & Business Logic |
-| **Dependency Injection** | [`get_it`](https://pub.dev/packages/get_it) | Service Locator for Decoupled Components |
-| **Routing** | [`go_router`](https://pub.dev/packages/go_router) | Declarative Routing & Argument Passing |
-| **Networking** | [`dio`](https://pub.dev/packages/dio) | HTTP Client with Interceptors |
-| **Local Storage** | [`hive`](https://pub.dev/packages/hive) & [`hive_flutter`](https://pub.dev/packages/hive_flutter) | Fast, Lightweight Key-Value DB |
-| **Functional Programming** | [`dartz`](https://pub.dev/packages/dartz) | Either<Failure, Success> Error Handling |
-| **UI Enhancements** | [`shimmer`](https://pub.dev/packages/shimmer), [`google_fonts`](https://pub.dev/packages/google_fonts) | Smooth Loading Skeletons & Typography |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-Ensure you have the following installed on your machine:
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (`>= 3.x`)
-- [Dart SDK](https://dart.dev/get-dart) (`>= 3.x`)
-- Android Studio / VS Code with Flutter extensions
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Muhammadkhiry/bookly_app.git](https://github.com/Muhammadkhiry/bookly_app.git)
-   cd bookly_app
