@@ -6,13 +6,15 @@ import 'package:equatable/equatable.dart';
 part 'similar_books_state.dart';
 
 class SimilarBooksCubit extends Cubit<SimilarBooksState> {
-  SimilarBooksCubit({required this.homeRepo}) : super(SimilarBooksInitial());
+  SimilarBooksCubit({required this.homeRepo, required this.bookName})
+    : super(SimilarBooksInitial());
 
   final HomeRepo homeRepo;
+  final String bookName;
 
   Future fetchBestSellerBooks() async {
     emit(SimilarBooksInitial());
-    var result = await homeRepo.fetchBestSellerBooks();
+    var result = await homeRepo.fetchSimilarBooks(bookName: bookName);
 
     result.fold(
       (failure) {
