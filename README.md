@@ -1,3 +1,16 @@
+المشكلة واضحة جداً في السكرين شوت الأخيرة!
+
+سبب خروج الكلام ده كله سايب في بعضه هو **إن الـ Code Block بتاع قسم الـ Architecture لم يتم إغلاقه بعلامات ````` (الثلاثة backticks)**. وبالتالي GitHub اعتبر باقي الملف كاملاً نصاً شاملاً داخل صندوق الكود ودمر التنسيق والجدول.
+
+---
+
+### الحل النهائي والمباشر (خطوة بخطوة):
+
+1. افتح ملف **`README.md`** في محرر الأكواد (VS Code).
+2. حدد كل المحتوى بـ **`Ctrl + A`** ثم **`Delete`** لمسحه بالكامل.
+3. انسخ الكود التالي **كاملاً** والصقه بداخل الملف:
+
+```markdown
 <div align="center">
 
   <img src="[https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/images/Logo.png](https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/images/Logo.png)" alt="Bookly Logo" width="160" />
@@ -52,12 +65,81 @@ lib/
     │   └── presentation/# Cubits, Views, and Feature Widgets
     ├── search/          # Book search feature & filters
     └── splash/          # Splash view with animated transitions
+
+```
+
+---
+
+## 🛠️ Tech Stack & Packages
+
+| Category | Technology / Package | Purpose |
+| --- | --- | --- |
+| **Framework** | [Flutter](https://flutter.dev) | Cross-platform UI Toolkit |
+| **Language** | [Dart](https://dart.dev) | Primary Programming Language |
+| **State Management** | [`flutter_bloc`](https://pub.dev/packages/flutter_bloc) | Predictable State & Business Logic |
+| **Dependency Injection** | [`get_it`](https://pub.dev/packages/get_it) | Service Locator for Decoupled Components |
+| **Routing** | [`go_router`](https://pub.dev/packages/go_router) | Declarative Routing & Argument Passing |
+| **Networking** | [`dio`](https://pub.dev/packages/dio) | HTTP Client with Interceptors |
+| **Local Storage** | [`hive`](https://pub.dev/packages/hive) & [`hive_flutter`](https://pub.dev/packages/hive_flutter) | Fast, Lightweight Key-Value DB |
+| **Functional Programming** | [`dartz`](https://pub.dev/packages/dartz) | Either<Failure, Success> Error Handling |
+| **UI Enhancements** | [`shimmer`](https://pub.dev/packages/shimmer), [`google_fonts`](https://pub.dev/packages/google_fonts) | Smooth Loading Skeletons & Typography |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+
+* [Flutter SDK](https://docs.flutter.dev/get-started/install) (`>= 3.x`)
+* [Dart SDK](https://dart.dev/get-dart) (`>= 3.x`)
+* Android Studio / VS Code with Flutter extensions
+
+### Installation
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/Muhammadkhiry/bookly_app.git
+cd bookly_app
+
 ```
 
 
-🛠️ Tech Stack & PackagesCategoryTechnology / PackagePurposeFrameworkFlutterCross-platform UI ToolkitLanguageDartPrimary Programming LanguageState Managementflutter_blocPredictable State & Business LogicDependency Injectionget_itService Locator for Decoupled ComponentsRoutinggo_routerDeclarative Routing & Argument PassingNetworkingdioHTTP Client with InterceptorsLocal Storagehive & hive_flutterFast, Lightweight Key-Value DBFunctional ProgrammingdartzEither<Failure, Success> Error HandlingUI Enhancementsshimmer, google_fontsSmooth Loading Skeletons & Typography🚀 Getting StartedPrerequisitesEnsure you have the following installed on your machine:Flutter SDK (>= 3.x)Dart SDK (>= 3.x)Android Studio / VS Code with Flutter extensionsInstallationClone the repository:Bashgit clone [https://github.com/Muhammadkhiry/bookly_app.git](https://github.com/Muhammadkhiry/bookly_app.git)
-cd bookly_app
-Install dependencies:Bashflutter pub get
-Generate Hive Adapters (if needed):Bashflutter pub run build_runner build --delete-conflicting-outputs
-Run the app:Bashflutter run
-👤 AuthorMuhammad Khairy🐙 GitHub: @Muhammadkhiry💼 LinkedIn: Muhammad Khairy⭐ If you find this project helpful, give it a star! ⭐
+2. **Install dependencies:**
+```bash
+flutter pub get
+
+```
+
+
+3. **Generate Hive Adapters (if needed):**
+```bash
+flutter pub run build_runner build --delete-conflicting-outputs
+
+```
+
+
+4. **Run the app:**
+```bash
+flutter run
+
+```
+
+
+
+---
+
+## 👤 Author
+
+**Muhammad Khairy**
+
+* 🐙 GitHub: [@Muhammadkhiry](https://www.google.com/search?q=https://github.com/Muhammadkhiry)
+* 💼 LinkedIn: [Muhammad Khairy](https://www.linkedin.com)
+
+---
+
+⭐ **If you find this project helpful, give it a star!** ⭐
+
+---
+
