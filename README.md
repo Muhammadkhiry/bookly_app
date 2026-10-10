@@ -1,7 +1,7 @@
 
 <div align="center">
 
-  <img src="[https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/images/Logo.png](https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/images/Logo.png)" alt="Bookly Logo" width="160" />
+  <img src="[https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/images/Logo.png](https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/assets/images/Logo.png)" alt="Bookly Logo" width="160" />
 
   # 📚 Bookly App
 
