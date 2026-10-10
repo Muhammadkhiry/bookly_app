@@ -1,16 +1,4 @@
-المشكلة واضحة جداً في السكرين شوت الأخيرة!
 
-سبب خروج الكلام ده كله سايب في بعضه هو **إن الـ Code Block بتاع قسم الـ Architecture لم يتم إغلاقه بعلامات ````` (الثلاثة backticks)**. وبالتالي GitHub اعتبر باقي الملف كاملاً نصاً شاملاً داخل صندوق الكود ودمر التنسيق والجدول.
-
----
-
-### الحل النهائي والمباشر (خطوة بخطوة):
-
-1. افتح ملف **`README.md`** في محرر الأكواد (VS Code).
-2. حدد كل المحتوى بـ **`Ctrl + A`** ثم **`Delete`** لمسحه بالكامل.
-3. انسخ الكود التالي **كاملاً** والصقه بداخل الملف:
-
-```markdown
 <div align="center">
 
   <img src="[https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/images/Logo.png](https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/images/Logo.png)" alt="Bookly Logo" width="160" />
