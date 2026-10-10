@@ -35,7 +35,6 @@ abstract class AppRouter {
         builder: (context, state) => BlocProvider(
           create: (context) => SimilarBooksCubit(
             homeRepo: getIt.get<HomeRepoImpl>(),
-            bookName: state.extra as String,
           )..fetchBestSellerBooks(),
           child: BookDetailsView(bookModel: state.extra as BookModel),
         ),

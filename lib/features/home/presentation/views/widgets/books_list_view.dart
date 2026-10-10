@@ -13,7 +13,7 @@ class BooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
-        if (state is FeaturedBooksInitial) {
+        if (state is FeaturedBooksLoading) {
           return Center(child: CircularProgressIndicator());
         } else if (state is FeaturedBooksSucceeded) {
           return SizedBox(
