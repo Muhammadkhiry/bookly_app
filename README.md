@@ -51,9 +51,13 @@
 
 <div align="center">
 
-https://github.com/user-attachments/assets/0926.mp4
+  <a href="https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/demo/0926.mp4">
+    <img src="https://img.shields.io/badge/Watch_App_Demo_Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch Demo" />
+  </a>
 
-> 💡 *Check out the interactive demo video located at [`assets/demo/0926.mp4`](assets/demo/0926.mp4) showcasing real-time search, offline favorites persistence, and smooth UI transitions.*
+  <br/><br/>
+
+  > 🎬 **[Click here to watch or download the full App Demo Video (MP4)](https://github.com/Muhammadkhiry/bookly_app/raw/main/assets/demo/0926.mp4)**
 
 </div>
 
