@@ -1,7 +1,6 @@
-
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/Muhammadkhiry/bookly_app/main/assets/images/Logo.png" alt="Bookly Logo" width="160" />
+  <img src="assets/images/Logo.png" alt="Bookly Logo" width="160" />
 
   # 📚 Bookly App
 
@@ -36,6 +35,30 @@
 
 ---
 
+## 📱 App UI Preview
+
+<div align="center">
+
+  | Home View | Book Details | Search View | Favorites View |
+  | :---: | :---: | :---: | :---: |
+  | <img src="assets/UI/home_view.png" width="190" /> | <img src="assets/UI/book_details_view.png" width="190" /> | <img src="assets/UI/search_view.png" width="190" /> | <img src="assets/UI/fav_view.png" width="190" /> |
+
+</div>
+
+---
+
+## 🎬 App Demo
+
+<div align="center">
+
+https://github.com/user-attachments/assets/0926.mp4
+
+> 💡 *Check out the interactive demo video located at [`assets/demo/0926.mp4`](assets/demo/0926.mp4) showcasing real-time search, offline favorites persistence, and smooth UI transitions.*
+
+</div>
+
+---
+
 ## 🏗️ Architecture & Project Structure
 
 The project strictly adheres to **Clean Architecture** combined with **Feature-First** organization:
@@ -53,7 +76,6 @@ lib/
     │   └── presentation/# Cubits, Views, and Feature Widgets
     ├── search/          # Book search feature & filters
     └── splash/          # Splash view with animated transitions
-
 ```
 
 ---
